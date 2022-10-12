@@ -1,0 +1,6 @@
+services:
+  custom_registration.route_subscriber:
+    class: Drupal\custom_registration\Routing\RegistrationRoute
+    arguments: []
+    tags:
+      - { name: event_subscriber }

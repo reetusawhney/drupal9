@@ -1,0 +1,37 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+
+function custom_registration_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  // Add a new validation function.
+  $form['#validate'][] = 'registration_form_submit';
+
+}
+
+function registration_form_submit($form, FormStateInterface $form_state) {
+
+  $total_number_of_members = 1 ;
+  $number_of_vegetarians = 0;
+
+  if('yes' == $form_state->getValue('field_one_plus')){
+    $total_number_of_members = $total_number_of_members + 1;
+  }
+
+  if($form_state->getValue('field_amount_of_kids')){
+    $number_of_kids_data = $form_state->getValue('field_amount_of_kids');
+    $number_of_kids = $number_of_kids_data[0]['value'];
+    $total_number_of_members = $number_of_kids + $total_number_of_members;
+  }
+
+  if($form_state->getValue('field_amount_of_vegetarians')){
+    $number_of_vegetarians_data = $form_state->getValue('field_amount_of_vegetarians');
+    $number_of_vegetarians = $number_of_vegetarians_data[0]['value'];
+  }
+
+  if ($number_of_vegetarians > $total_number_of_members) {
+    $form_state->setErrorByName('field_amount_of_vegetarians', t('Number of Vegetarians cannot be hire than the total amount of people'));
+  }
+
+}

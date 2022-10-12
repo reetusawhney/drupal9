@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.registration.field_amount_of_kids
+    - field.field.node.registration.field_amount_of_vegetarians
+    - field.field.node.registration.field_email_address
+    - field.field.node.registration.field_one_plus
+    - node.type.registration
+  module:
+    - user
+id: node.registration.teaser
+targetEntityType: node
+bundle: registration
+mode: teaser
+

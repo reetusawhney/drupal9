@@ -1,0 +1,19 @@
+uuid: d05ef58b-5767-486d-b40b-fc8d2e2fc8ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: TpXP4_epnSStXQsQysDo1Oq06yOLjympEvN13hFqvvk
+name: Registration
+type: registration
+description: 'Registration form for Employee'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

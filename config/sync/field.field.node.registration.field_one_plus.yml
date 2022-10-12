@@ -1,0 +1,23 @@
+uuid: 6aff7206-3f5b-4d51-b3dc-e2661f0faa65
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_one_plus
+    - node.type.registration
+  module:
+    - options
+_core:
+  default_config_hash: ixH3XoicRmpPlpqaUzgqSEhaGTjp3Hp7RQa2QWetB1I
+id: node.registration.field_one_plus
+field_name: field_one_plus
+entity_type: node
+bundle: registration
+label: 'One Plus'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
